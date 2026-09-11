@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eee9df" />
+    <title>My library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=Karla:wght@300;400;500&family=Space+Mono:wght@400;700&family=Special+Elite&family=Unbounded:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <div class="design-strip" aria-hidden="true"></div>
+    <div class="woodland-art" aria-hidden="true"><span class="tree tree-left"></span><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="tree tree-right"></span><span class="leaf leaf-three"></span></div>
+    <div class="illustration-layer" aria-hidden="true">
+      <img class="illustration illustration-books" src="illustrations/no%20background%20/d0a4ee2ffbbb2dca1c14078da5824d12-removebg-preview.png" alt="" />
+      <img class="illustration illustration-reader" src="illustrations/no%20background%20/5774b4feaa0fff6cca8d360516975550-removebg-preview.png" alt="" />
+      <img class="illustration illustration-cats" src="illustrations/no%20background%20/e587203ff0b48ccfaf2a580a2d04f4bc-removebg-preview.png" alt="" />
+      <img class="illustration illustration-fish" src="illustrations/no%20background%20/55112905c57ddd3b87cadc0ea5698ed8-removebg-preview.png" alt="" />
+      <img class="illustration illustration-note" src="illustrations/no%20background%20/e702207f0071b04894378a2f7a01a14c-removebg-preview.png" alt="" />
+      <img class="illustration illustration-bird" src="illustrations/no%20background%20/d4f11e36d5478f2f81d08e0641c44432-removebg-preview.png" alt="" />
+      <img class="illustration illustration-figure" src="illustrations/no%20background%20/3ac1820fbb853f4fd58b7fc29239450b-removebg-preview.png" alt="" />
+    </div>
+    <header class="masthead">
+      <nav class="top-nav"><span>SIMONA'S PERSONAL ARCHIVE · 2026</span><span class="nav-links"><a href="#shelf">SHELF</a><a href="#to-read-shelf">TO READ</a><button id="nav-add-book" type="button">+ ADD A BOOK</button></span></nav>
+      <h1 aria-label="Welcome to my library"><span id="typed-title"></span><span class="caret">|</span></h1>
+      <div class="header-row">
+        <p class="intro">A small record of stories that stayed.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Library controls">
+        <div id="genre-list" class="genres" role="list"></div>
+      </section>
+
+      <section class="shelf-section">
+        <div class="section-meta"><div><span id="section-label">The read shelf</span><div class="sort-controls" data-sort-shelf="read"><button data-sort="title">TITLE A-Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div></div><div id="read-stat" class="shelf-stat"></div></div>
+        <div id="shelf" class="shelf-viewport drop-shelf" data-shelf="read" tabindex="0" aria-label="Bookshelf. Drop a book here to mark it as read."></div>
+        <div class="shelf-base"><span></span></div>
+      </section>
+      <section class="shelf-section next-shelf">
+        <div class="section-meta"><div><span>To be read</span><div class="sort-controls" data-sort-shelf="toRead"><button data-sort="title">TITLE A-Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div></div><div id="to-read-stat" class="shelf-stat"></div></div>
+        <div id="to-read-shelf" class="shelf-viewport drop-shelf" data-shelf="toRead" tabindex="0" aria-label="Books to be read. Drag books from here to the read shelf."></div>
+        <div class="shelf-base"><span></span></div>
+      </section>
+      <section id="empty" class="empty" hidden>No books match this corner of the library.</section>
+    </main>
+
+    <div id="detail" class="detail" hidden></div>
+    <script src="app.js?v=5"></script>
+  </body>
+</html>
