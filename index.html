@@ -20,7 +20,7 @@
     </div>
     <header class="masthead">
       <nav class="top-nav">
-        <span>SIMONA'S PERSONAL ARCHIVE · 2026</span>
+        <span>A PERSONAL ARCHIVE · 2026</span>
         <span class="nav-links"><a href="#shelf">SHELF</a><a href="#to-read-shelf">TO READ</a><button id="nav-add-book" type="button">+ ADD A BOOK</button></span>
       </nav>
       <div class="masthead-grid">
@@ -41,19 +41,28 @@
       </section>
 
       <section class="shelf-section">
-        <div class="section-meta"><span id="section-label">THE READ SHELF</span><span id="read-found"></span></div>
+        <div class="shelf-header"><span>THE READ SHELF · ENDLESS</span><span data-loop-readout>46 FOUND</span></div>
         <div class="sort-row" data-sort-shelf="read"><button data-sort="title">TITLE A–Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div>
-        <div id="shelf" class="shelf-viewport drop-shelf" data-shelf="read" tabindex="0" aria-label="Bookshelf. Drop a book here to mark it as read."></div>
+        <div class="shelf-outer">
+          <img class="doodle-img todo-doodle" src="illustrations/no%20background%20/e702207f0071b04894378a2f7a01a14c-removebg-preview.png" alt="" aria-hidden="true" />
+          <div id="shelf" class="shelf-window" data-shelf tabindex="0" aria-label="The read shelf. Scroll, drag, or use the arrow keys. Press Enter to open a book."><div class="shelf-track" data-track></div></div>
+          <button type="button" class="shelf-nudge shelf-nudge-prev" data-shelf="read" data-dir="-1" aria-label="Scroll shelf left">‹</button>
+          <button type="button" class="shelf-nudge shelf-nudge-next" data-shelf="read" data-dir="1" aria-label="Scroll shelf right">›</button>
+        </div>
         <div class="shelf-board"></div>
-        <div class="shelf-footer"><span class="shelf-footer-left"><img class="doodle-img todo-doodle" src="illustrations/no%20background%20/e702207f0071b04894378a2f7a01a14c-removebg-preview.png" alt="" aria-hidden="true" />DRAG A SPINE TO PULL IT OUT · CLICK TO OPEN</span><span id="read-stat"></span></div>
+        <div class="shelf-footer"><span>DRAG OR SCROLL THE SHELF · CLICK TO OPEN</span><span>IT NEVER ENDS</span></div>
       </section>
 
       <section class="shelf-section next-shelf">
-        <div class="section-meta"><span>TO BE READ</span><span id="toread-found"></span></div>
+        <div class="shelf-header"><span>TO BE READ · ENDLESS</span><span data-loop-readout>0 WAITING</span></div>
         <div class="sort-row" data-sort-shelf="toRead"><button data-sort="title">TITLE A–Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div>
-        <div id="to-read-shelf" class="shelf-viewport drop-shelf" data-shelf="toRead" tabindex="0" aria-label="Books to be read. Drag books from here to the read shelf."></div>
+        <div class="shelf-outer">
+          <div id="to-read-shelf" class="shelf-window" data-shelf tabindex="0" aria-label="The to-read shelf. Scroll, drag, or use the arrow keys. Press Enter to open a book."><div class="shelf-track" data-track></div></div>
+          <button type="button" class="shelf-nudge shelf-nudge-prev" data-shelf="toRead" data-dir="-1" aria-label="Scroll shelf left">‹</button>
+          <button type="button" class="shelf-nudge shelf-nudge-next" data-shelf="toRead" data-dir="1" aria-label="Scroll shelf right">›</button>
+        </div>
         <div class="shelf-board"></div>
-        <div class="shelf-footer"><span>DRAG A SPINE TO PULL IT OUT · CLICK TO OPEN</span><span id="to-read-stat"></span></div>
+        <div class="shelf-footer"><span>DRAG OR SCROLL THE SHELF · CLICK TO OPEN</span><span id="to-read-stat"></span></div>
       </section>
 
       <section id="empty" class="empty" hidden>No books match this corner of the library.</section>
@@ -68,6 +77,13 @@
         <form id="add-form">
           <input class="field-input" type="text" name="title" id="add-title" placeholder="Title" required autocomplete="off" />
           <input class="field-input" type="text" name="author" id="add-author" placeholder="Author" required autocomplete="off" />
+          <div class="shelf-picker-row">
+            <span class="field-label">SHELF</span>
+            <div class="shelf-toggle" id="add-shelf-toggle">
+              <button type="button" data-shelf="toRead">To read</button>
+              <button type="button" data-shelf="read">Read</button>
+            </div>
+          </div>
           <div class="spine-picker-row">
             <span class="field-label">SPINE</span>
             <div class="spine-swatches" id="add-spine-swatches"></div>
@@ -83,6 +99,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
-    <script src="app.js?v=8"></script>
+    <script src="app.js?v=11"></script>
   </body>
 </html>
