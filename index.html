@@ -3,31 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#eee9df" />
+    <meta name="theme-color" content="#2A1BE8" />
     <title>My library</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&family=Karla:wght@300;400;500&family=Space+Mono:wght@400;700&family=Special+Elite&family=Unbounded:wght@300;400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="grain"></div>
-    <div class="design-strip" aria-hidden="true"></div>
-    <div class="woodland-art" aria-hidden="true"><span class="tree tree-left"></span><span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="tree tree-right"></span><span class="leaf leaf-three"></span></div>
     <div class="illustration-layer" aria-hidden="true">
       <img class="illustration illustration-books" src="illustrations/no%20background%20/d0a4ee2ffbbb2dca1c14078da5824d12-removebg-preview.png" alt="" />
-      <img class="illustration illustration-reader" src="illustrations/no%20background%20/5774b4feaa0fff6cca8d360516975550-removebg-preview.png" alt="" />
       <img class="illustration illustration-cats" src="illustrations/no%20background%20/e587203ff0b48ccfaf2a580a2d04f4bc-removebg-preview.png" alt="" />
       <img class="illustration illustration-fish" src="illustrations/no%20background%20/55112905c57ddd3b87cadc0ea5698ed8-removebg-preview.png" alt="" />
-      <img class="illustration illustration-note" src="illustrations/no%20background%20/e702207f0071b04894378a2f7a01a14c-removebg-preview.png" alt="" />
       <img class="illustration illustration-bird" src="illustrations/no%20background%20/d4f11e36d5478f2f81d08e0641c44432-removebg-preview.png" alt="" />
-      <img class="illustration illustration-figure" src="illustrations/no%20background%20/3ac1820fbb853f4fd58b7fc29239450b-removebg-preview.png" alt="" />
     </div>
     <header class="masthead">
-      <nav class="top-nav"><span>SIMONA'S PERSONAL ARCHIVE · 2026</span><span class="nav-links"><a href="#shelf">SHELF</a><a href="#to-read-shelf">TO READ</a><button id="nav-add-book" type="button">+ ADD A BOOK</button></span></nav>
-      <h1 aria-label="Welcome to my library"><span id="typed-title"></span><span class="caret">|</span></h1>
-      <div class="header-row">
-        <p class="intro">A small record of stories that stayed.</p>
+      <nav class="top-nav">
+        <span>SIMONA'S PERSONAL ARCHIVE · 2026</span>
+        <span class="nav-links"><a href="#shelf">SHELF</a><a href="#to-read-shelf">TO READ</a><button id="nav-add-book" type="button">+ ADD A BOOK</button></span>
+      </nav>
+      <div class="masthead-grid">
+        <div class="masthead-copy">
+          <h1><span class="h1-italic">Welcome</span><br /><span class="h1-bold">TO MY</span> <span class="h1-italic">library</span></h1>
+          <p class="intro">A small record of stories that stayed. Pull one off the shelf.</p>
+        </div>
+        <div class="masthead-aside">
+          <img class="doodle-img reader-doodle" src="illustrations/no%20background%20/5774b4feaa0fff6cca8d360516975550-removebg-preview.png" alt="" aria-hidden="true" />
+          <div class="volume-count"><strong id="total-count">0</strong><span id="total-stat">VOLUMES · 0 AUTHORS</span></div>
+        </div>
       </div>
     </header>
 
@@ -37,19 +41,48 @@
       </section>
 
       <section class="shelf-section">
-        <div class="section-meta"><div><span id="section-label">The read shelf</span><div class="sort-controls" data-sort-shelf="read"><button data-sort="title">TITLE A-Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div></div><div id="read-stat" class="shelf-stat"></div></div>
+        <div class="section-meta"><span id="section-label">THE READ SHELF</span><span id="read-found"></span></div>
+        <div class="sort-row" data-sort-shelf="read"><button data-sort="title">TITLE A–Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div>
         <div id="shelf" class="shelf-viewport drop-shelf" data-shelf="read" tabindex="0" aria-label="Bookshelf. Drop a book here to mark it as read."></div>
-        <div class="shelf-base"><span></span></div>
+        <div class="shelf-board"></div>
+        <div class="shelf-footer"><span class="shelf-footer-left"><img class="doodle-img todo-doodle" src="illustrations/no%20background%20/e702207f0071b04894378a2f7a01a14c-removebg-preview.png" alt="" aria-hidden="true" />DRAG A SPINE TO PULL IT OUT · CLICK TO OPEN</span><span id="read-stat"></span></div>
       </section>
+
       <section class="shelf-section next-shelf">
-        <div class="section-meta"><div><span>To be read</span><div class="sort-controls" data-sort-shelf="toRead"><button data-sort="title">TITLE A-Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div></div><div id="to-read-stat" class="shelf-stat"></div></div>
+        <div class="section-meta"><span>TO BE READ</span><span id="toread-found"></span></div>
+        <div class="sort-row" data-sort-shelf="toRead"><button data-sort="title">TITLE A–Z</button><button data-sort="author">AUTHOR</button><button data-sort="random">RANDOM</button></div>
         <div id="to-read-shelf" class="shelf-viewport drop-shelf" data-shelf="toRead" tabindex="0" aria-label="Books to be read. Drag books from here to the read shelf."></div>
-        <div class="shelf-base"><span></span></div>
+        <div class="shelf-board"></div>
+        <div class="shelf-footer"><span>DRAG A SPINE TO PULL IT OUT · CLICK TO OPEN</span><span id="to-read-stat"></span></div>
       </section>
+
       <section id="empty" class="empty" hidden>No books match this corner of the library.</section>
     </main>
 
     <div id="detail" class="detail" hidden></div>
-    <script src="app.js?v=5"></script>
+
+    <div id="add-modal" class="modal-scrim" hidden>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="add-modal-title">
+        <div class="modal-head"><span class="eyebrow">ADD A BOOK</span><button type="button" class="modal-close" id="add-modal-close" aria-label="Close">×</button></div>
+        <h3 id="add-modal-title">New volume</h3>
+        <form id="add-form">
+          <input class="field-input" type="text" name="title" id="add-title" placeholder="Title" required autocomplete="off" />
+          <input class="field-input" type="text" name="author" id="add-author" placeholder="Author" required autocomplete="off" />
+          <div class="spine-picker-row">
+            <span class="field-label">SPINE</span>
+            <div class="spine-swatches" id="add-spine-swatches"></div>
+            <div class="modal-rating">
+              <span class="field-label">RATING</span>
+              <div class="rating-diamonds" id="add-rating-diamonds"></div>
+            </div>
+          </div>
+          <button type="submit" class="shelve-btn">Shelve it</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="app.js?v=8"></script>
   </body>
 </html>
